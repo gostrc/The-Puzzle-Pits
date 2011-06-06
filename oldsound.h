@@ -17,11 +17,6 @@
 	#define INT16 signed short
 #endif
 
-#ifndef INT32
-	#define INT32 signed long
-#endif
-
-
 typedef struct
 {
 	INT8    far *samples;
