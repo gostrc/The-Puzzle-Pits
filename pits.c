@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "file.h"
 #include "tiledefs.h"
@@ -8,8 +9,6 @@ typedef struct {
   WORD crack,groan,magic,plateoff,plateon,scrape,water,lava,splinter,glass;
 } SFX;
 
-
-#define abs(x) ((x)<0?-(x):(x))
 #define PUSHDELAY 25
 
 SFX sfx;
