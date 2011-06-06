@@ -21,13 +21,6 @@
 #include "sound.h"
 #include "env.h"
 
-
-
-#define LENIDS  4
-#define LENLENS 4
-
-
-
 typedef struct                                          //these structs hold the header struct of a .WAV
 {
 	char    riffid[4];                              //"RIFF"
