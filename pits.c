@@ -25,12 +25,7 @@ WORD  redgems,greengems,bluegems,yellowgems,redkeys,greenkeys,bluekeys;
 extern unsigned char keytable[256];
 
 struct PitCode  pitcodedef[MAXPITCODE];
-#ifdef _amigapits_
-__far unsigned char code[MAXCODEMEMORY];
-#endif
-#ifdef _ibmpits_
 unsigned char far code[32768];
-#endif
 UWORD totalcode;
 
 #define COMPILEGAME 1
