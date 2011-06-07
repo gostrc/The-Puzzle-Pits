@@ -17,7 +17,6 @@ struct GameVars gamevars;
 WORD  editxc=0, edityc=0;
 WORD  under[23][23],over[23][23],pitcode[23][23];
 WORD  tilemenu[10];
-char  NumberString[]={"1234567890"};
 WORD  letgo1;  //user: let go of mouse button #1!
 WORD  copysidebar=0;
 WORD  redgems,greengems,bluegems,yellowgems,redkeys,greenkeys,bluekeys;

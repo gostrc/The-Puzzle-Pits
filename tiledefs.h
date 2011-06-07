@@ -99,7 +99,6 @@ extern WORD  under[23][23],over[23][23],pitcode[23][23];
 extern WORD  curpointer;
 extern WORD  tilemenu[10];
 extern WORD  keyqual;
-extern char  NumberString[];
 extern char  KeyMapLower[];
 extern char  KeyMapUpper[];
 */
