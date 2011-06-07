@@ -27,7 +27,6 @@ struct PitCode  pitcodedef[MAXPITCODE];
 unsigned char far code[32768];
 UWORD totalcode;
 
-#define COMPILEGAME 1
 WORD  walkable[100+1];
 WORD  path[23][23],lastpushed[23][23],arrows[442],plates[442];
 WORD  lastpathx,lastpathy;
