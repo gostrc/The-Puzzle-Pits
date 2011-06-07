@@ -44,7 +44,6 @@ void ScreenSwap(void);
 void ScreenCopy(void);
 void clearscreen(char far *vscreen);
 void Clear(WORD n);
-void FreeShapes(void);
 void LoadShapes(char *filename,WORD pos);
 
 void PlaySound(int n);

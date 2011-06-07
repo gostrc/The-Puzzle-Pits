@@ -933,11 +933,6 @@ void Clear(WORD n)
   }
 }
 
-void FreeShapes(void)
-{
-  //this function does nothing special (holdover from Amiga version)
-}
-
 void LoadShapes(char *filename,WORD pos)
 {
   UWORD width,height,i;

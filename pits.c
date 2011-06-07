@@ -196,7 +196,6 @@ main()
         break;
     }
   }while(choice!=2);
-  FreeShapes();
   Clear(LOGIC);
   FadeIn();
   cleanExit(RET_OK);
