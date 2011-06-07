@@ -48,26 +48,6 @@ extern void far relpos(WORD far *x,WORD far *y);
 extern void far setkb(void);
 extern void far resetkb(void);
 
-
-/*
-void main(void)
-{
-  int x,y,frame;
-  FILE *fp;
-  gfxInit();
-  LoadShapes("tiles.bmp",0);
-  //copymousebg(physical);
-  //drawmouse(physical);
-  Clear(LOGIC);
-  SetPalette(1);
-  SetColor(1);
-  //ScreenSwap();
-  while(!keytable[CRKEY]) CheckMouse();
-  cleanExit(0);
-}
-*/
-
-
 void blitletter(unsigned char far *tile,char far *screen)
 {
   int deltax,width,height;
