@@ -103,9 +103,7 @@ main()
     choice=-1;
     notdone=1;
     while(notdone){
-      OwnBlit();
       Blit(LOGIC,128,148,TITLETEXTBG);
-      DisownBlit();
       ShadowText(141,148,"Enter Level Password",20,menuitem==0?16:1);
       ShadowText(141,156,"Start New Game",14,menuitem==1?16:1);
       ShadowText(141,164,"Quit",4,menuitem==2?16:1);
@@ -138,9 +136,7 @@ main()
         x=0;
         inkey=0xff;
         do{
-          OwnBlit();
           Blit(LOGIC,128,148,TITLETEXTBG);
-          DisownBlit();
           ShadowText(141,148,"Enter Level Password",20,16);
           ShadowText(141,164,password,x,1);
           ShadowText(141+TxtLength(password,x),164,"_",1,16);
@@ -907,10 +903,8 @@ void  DrawItemBox(WORD x,WORD y,WORD image,WORD quantity,WORD fnkey)
     Boxf(x-6,y,32,36,5);
   }else{
     Boxf(x,y+27,26,10,5);  //Clear old text
-    OwnBlit();
     Blit(LOGIC,x-6,y+1,fnkey);
     BlitMask(LOGIC,x+1,y+1,image);
-    DisownBlit();
     Frame(x,y,26,26,3,6);
     if(quantity!=-1){
       sprintf(quanstring,"%d",quantity);
@@ -1233,7 +1227,6 @@ void Gdrall(void)
     over[regs[REG_XGUY-201]][regs[REG_YGUY-201]]=guyframe;
   }
   yd=regs[REG_YGUY-201]-3;
-  OwnBlit();
 
   //while(Timer()-lastdrew<FRAMEDELAY);
   WasteTime();  //make sure the delay between frames has been long enough
@@ -1316,7 +1309,6 @@ void Gdrall(void)
     BlitMask24(LOGIC,3,3,guyframe+2);
     BlitMask24(LOGIC,4,3,guyframe+3);
   }
-  DisownBlit();
   lastdrew=Timer();
   if(gamevars.greengemon<7){
     over[regs[REG_XGUY-201]][regs[REG_YGUY-201]]=underguy;
@@ -2166,13 +2158,9 @@ void CheckGuy(void)
         if((mx>=223 && mx<223+26 && my>=13 && my<13+26 && letgo1)||inkey==137){  //yield
           if(inkey==137) inkey=0xff;
           ScreenCopy();
-          OwnBlit();
           BlitMask(LOGIC,224,14,YIELDPRESSED);
-          DisownBlit();
           ScreenSwap();
-          OwnBlit();
           BlitMask(LOGIC,224,14,YIELD);
-          DisownBlit();
           inkey='r';
           levelnotdone=0;
           letgo1=0;
@@ -2180,13 +2168,9 @@ void CheckGuy(void)
         if((mx>=287 && mx<287+26 && my>=13 && my<13+26 && letgo1)||inkey==138){  //stop
           if(inkey==138) inkey=0xff;
           ScreenCopy();
-          OwnBlit();
           BlitMask(LOGIC,288,14,STOPPRESSED);
-          DisownBlit();
           ScreenSwap();
-          OwnBlit();
           BlitMask(LOGIC,288,14,STOP);
-          DisownBlit();
           levelnotdone=0;
           levelrepeat=0;
           letgo1=0;

@@ -19,8 +19,6 @@ void BlitMask24(WORD bmap,WORD x,WORD y,WORD image);
 void Blit(WORD bmap,WORD x,WORD y,WORD image);
 void BlitMask(WORD bmap,WORD x,WORD y,WORD image);
 void LittleTile(WORD bmap,WORD x,WORD y,WORD image);
-void OwnBlit(void);
-void DisownBlit(void);
 
 void GetLevelName(char *lname,WORD firsttime);
 ULONG Timer(void);

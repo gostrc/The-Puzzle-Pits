@@ -278,17 +278,6 @@ void LittleTile(WORD bmap,WORD x,WORD y,WORD image)
   }
 }
 
-void OwnBlit(void)
-{
-  // does nothing
-}
-
-void DisownBlit(void)
-{
-  //does nothing
-}
-
-
 void Plot(WORD x,WORD y,BYTE c,char far *vscreen)
 {
   asm {
