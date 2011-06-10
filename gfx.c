@@ -857,16 +857,6 @@ void ScreenCopySidebar(void)
   //This function does nothing;
 }
 
-void LoadSprites(void)
-{
-  //This function does nothing.
-}
-
-void FreeSprites(void)
-{
-  //This function does nothing
-}
-
 void ScreenSwap(void)
 { 
   copymousebg(logical);
