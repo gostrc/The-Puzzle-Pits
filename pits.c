@@ -826,7 +826,6 @@ void PrintText(CodePtr *pos,WORD len,WORD input)
       FadeIn();
     }else{
       ScreenSwap();
-      ScreenCopy();
       if(copysidebar){ScreenCopySidebar(); copysidebar=0;}
     }
     SetMousePos(216,168);
@@ -864,7 +863,6 @@ void PrintText(CodePtr *pos,WORD len,WORD input)
       ChangeMouse(BLANKPOINTER);
       SetMousePos(108,84);
     }
-    ScreenCopy();
     inkey=0xff;
   }
 }
@@ -1984,7 +1982,6 @@ void CheckGuy(void)
             y=regs[REG_YGUY-201];
             if(under[x][y]==REDLOCK){
               regs[REG_REDKEYS-201]--;
-              ScreenCopy();
               UpdateItem(REDKEY);
               ScreenSwap();
               UpdateItem(REDKEY);
@@ -2000,7 +1997,6 @@ void CheckGuy(void)
             y=regs[REG_YGUY-201];
             if(under[x][y]==GREENLOCK){
               regs[REG_GREENKEYS-201]--;
-              ScreenCopy();
               UpdateItem(GREENKEY);
               ScreenSwap();
               UpdateItem(GREENKEY);
@@ -2016,7 +2012,6 @@ void CheckGuy(void)
             y=regs[REG_YGUY-201];
             if(under[x][y]==BLUELOCK){
               regs[REG_BLUEKEYS-201]--;
-              ScreenCopy();
               UpdateItem(BLUEKEY);
               ScreenSwap();
               UpdateItem(BLUEKEY);
@@ -2031,7 +2026,6 @@ void CheckGuy(void)
             if(regs[REG_REDGEMS-201]>0){
               gamevars.redgemon=1;
               sfx.magic=1;
-              ScreenCopy();
               UpdateItem(REDGEM);
               ScreenSwap();
               UpdateItem(REDGEM);
@@ -2042,7 +2036,6 @@ void CheckGuy(void)
             gamevars.redgemon=0;
             RunPitCode(pcredg,0,0,0);
             regs[REG_REDGEMS-201]--;
-            ScreenCopy();
             UpdateItem(REDGEM);
             ScreenSwap();
             UpdateItem(REDGEM);
@@ -2055,7 +2048,6 @@ void CheckGuy(void)
             if(regs[REG_GREENGEMS-201]>0){
               gamevars.greengemon=1;
               sfx.magic=1;
-              ScreenCopy();
               UpdateItem(GREENGEM);
               ScreenSwap();
               UpdateItem(GREENGEM);
@@ -2109,7 +2101,6 @@ void CheckGuy(void)
               }
               RunPitCode(pcgreeng,0,0,0);
               regs[REG_GREENGEMS-201]--;
-              ScreenCopy();
               UpdateItem(GREENGEM);
               ScreenSwap();
               UpdateItem(GREENGEM);
@@ -2124,7 +2115,6 @@ void CheckGuy(void)
             if(regs[REG_BLUEGEMS-201]>0){
               gamevars.bluegemon=1;
               sfx.magic=1;
-              ScreenCopy();
               UpdateItem(BLUEGEM);
               ScreenSwap();
               UpdateItem(BLUEGEM);
@@ -2135,7 +2125,6 @@ void CheckGuy(void)
             gamevars.bluegemon=0;
             RunPitCode(pcblueg,0,0,0);
             regs[REG_BLUEGEMS-201]--;
-            ScreenCopy();
             UpdateItem(BLUEGEM);
             ScreenSwap();
             UpdateItem(BLUEGEM);
@@ -2146,7 +2135,6 @@ void CheckGuy(void)
           if(inkey==132) inkey=0xff;
           if(regs[REG_YELLOWGEMS-201]==-1){
             gamevars.yellowgemon=1;
-            ScreenCopy();
             UpdateItem(YELLOWGEM);
             ScreenSwap();
             MagicEye();
@@ -2157,7 +2145,6 @@ void CheckGuy(void)
         }
         if((mx>=223 && mx<223+26 && my>=13 && my<13+26 && letgo1)||inkey==137){  //yield
           if(inkey==137) inkey=0xff;
-          ScreenCopy();
           BlitMask(LOGIC,224,14,YIELDPRESSED);
           ScreenSwap();
           BlitMask(LOGIC,224,14,YIELD);
@@ -2167,7 +2154,6 @@ void CheckGuy(void)
         }
         if((mx>=287 && mx<287+26 && my>=13 && my<13+26 && letgo1)||inkey==138){  //stop
           if(inkey==138) inkey=0xff;
-          ScreenCopy();
           BlitMask(LOGIC,288,14,STOPPRESSED);
           ScreenSwap();
           BlitMask(LOGIC,288,14,STOP);
@@ -2231,7 +2217,6 @@ void CheckLevelDone(void)
     redkeys=regs[REG_REDKEYS-201];
     greenkeys=regs[REG_GREENKEYS-201];
     bluekeys=regs[REG_BLUEKEYS-201];
-    ScreenCopy();
     levelnotdone=0;
     FilledFrame(0,0,216,168,3,6,5);
     x=TxtLength(ldone,15);

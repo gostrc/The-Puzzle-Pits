@@ -865,11 +865,6 @@ void ScreenSwap(void)
   erasemouse(logical);
 }
 
-void ScreenCopy(void)
-{
-  //This function does nothing.
-}
-
 void clearscreen(char far *vscreen)
 {
   asm{
