@@ -32,7 +32,6 @@ void Boxf(WORD x,WORD y,WORD width,WORD height,WORD c1);
 void Pause(LONG n);
 void LoadScreen(LONG n);
 void FadeIn(void);
-void ScreenCopySidebar(void);
 
 void Plot(WORD x,WORD y,BYTE c,char far *vscreen);
 

@@ -480,7 +480,7 @@ void RunPitCode(WORD index,WORD x,WORD y,WORD onoff){
       case CMD_REDRAW:
         Gdrall();
         ScreenSwap();
-        if(copysidebar) {ScreenCopySidebar(); copysidebar=0;}
+        if(copysidebar) {copysidebar=0;}
         break;
       case CMD_APPEAR:
         sfx.magic=1;
@@ -502,7 +502,7 @@ void RunPitCode(WORD index,WORD x,WORD y,WORD onoff){
         do{
           Gdrall();
           ScreenSwap();
-          if(copysidebar) {ScreenCopySidebar(); copysidebar=0;}
+          if(copysidebar) {copysidebar=0;}
           CheckMouse();
           if(inkey==28) SetMousePos((mx/24)*24+12,(my/24)*24-24+12);
           if(inkey==29) SetMousePos((mx/24)*24+12,(my/24)*24+24+12);
@@ -826,7 +826,7 @@ void PrintText(CodePtr *pos,WORD len,WORD input)
       FadeIn();
     }else{
       ScreenSwap();
-      if(copysidebar){ScreenCopySidebar(); copysidebar=0;}
+      if(copysidebar){copysidebar=0;}
     }
     SetMousePos(216,168);
     ChangeMouse(BUSYPOINTER);
@@ -2271,7 +2271,7 @@ void GameMainLoop(void)
           Gdrall();
           ScreenSwap();
         }
-        if(copysidebar){ScreenCopySidebar(); copysidebar=0;}
+        if(copysidebar){copysidebar=0;}
         CheckMouse();
         CheckLevelDone();
         while(inkey=='p'){  //Pause

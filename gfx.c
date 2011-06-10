@@ -852,11 +852,6 @@ void FadeIn(void)
   erasemouse(logical);
 }
 
-void ScreenCopySidebar(void)
-{
-  //This function does nothing;
-}
-
 void ScreenSwap(void)
 { 
   copymousebg(logical);
