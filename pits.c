@@ -1265,9 +1265,7 @@ void Gdrall(void)
       frame%=4;
     } /* end x loop */
     yd++;
-    #ifdef _ibmpits_
-      CheckMouse();
-    #endif
+    CheckMouse();
   }
   if(gamevars.pushing && !magic){
     switch(regs[REG_FACING-201]){

@@ -2,7 +2,6 @@
 
 #include <dos.h>
 
-#define _ibmpits_ 1
 #define CRKEY 28
 #define UPKEY 72
 #define DNKEY 80
