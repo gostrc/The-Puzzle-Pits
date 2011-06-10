@@ -18,7 +18,6 @@ WORD  editxc=0, edityc=0;
 WORD  under[23][23],over[23][23],pitcode[23][23];
 WORD  tilemenu[10];
 WORD  letgo1;  //user: let go of mouse button #1!
-WORD  copysidebar=0;
 WORD  redgems,greengems,bluegems,yellowgems,redkeys,greenkeys,bluekeys;
 extern unsigned char keytable[256];
 
@@ -281,7 +280,6 @@ void  SetRegVal(CodePtr **pos, WORD newvalue)
       regs[cmd-201]=newvalue;
       if(cmd>=REG_REDGEMS && cmd<=REG_REDKEYS){
         UpdateItem(cmd-REG_REDGEMS+REDGEM);
-        copysidebar=1;
       }
     }else{
       switch(cmd){
@@ -480,7 +478,6 @@ void RunPitCode(WORD index,WORD x,WORD y,WORD onoff){
       case CMD_REDRAW:
         Gdrall();
         ScreenSwap();
-        if(copysidebar) {copysidebar=0;}
         break;
       case CMD_APPEAR:
         sfx.magic=1;
@@ -502,7 +499,6 @@ void RunPitCode(WORD index,WORD x,WORD y,WORD onoff){
         do{
           Gdrall();
           ScreenSwap();
-          if(copysidebar) {copysidebar=0;}
           CheckMouse();
           if(inkey==28) SetMousePos((mx/24)*24+12,(my/24)*24-24+12);
           if(inkey==29) SetMousePos((mx/24)*24+12,(my/24)*24+24+12);
@@ -529,7 +525,6 @@ void RunPitCode(WORD index,WORD x,WORD y,WORD onoff){
           RunPitCode(pcredg,0,0,0);
           regs[REG_REDGEMS-201]--;
           UpdateItem(REDGEM);
-          copysidebar=1;
         }
         break;
       case CMD_GREENGEMOFF:
@@ -538,7 +533,6 @@ void RunPitCode(WORD index,WORD x,WORD y,WORD onoff){
           RunPitCode(pcgreeng,0,0,0);
           regs[REG_GREENGEMS-201]--;
           UpdateItem(GREENGEM);
-          copysidebar=1;
         }
         break;
       case CMD_BLUEGEMOFF:
@@ -547,7 +541,6 @@ void RunPitCode(WORD index,WORD x,WORD y,WORD onoff){
           RunPitCode(pcblueg,0,0,0);
           regs[REG_BLUEGEMS-201]--;
           UpdateItem(BLUEGEM);
-          copysidebar=1;
         }
         break;
       case CMD_POPUP:
@@ -826,7 +819,6 @@ void PrintText(CodePtr *pos,WORD len,WORD input)
       FadeIn();
     }else{
       ScreenSwap();
-      if(copysidebar){copysidebar=0;}
     }
     SetMousePos(216,168);
     ChangeMouse(BUSYPOINTER);
@@ -1026,7 +1018,6 @@ WORD GameLoadLevel(void)
   StoneText(5,179,gamevars.level,strlen(gamevars.level),0);
   StoneText(5,193,gamevars.title,strlen(gamevars.title),0);
   DrawSideBar();
-  copysidebar=1;
   ProcessLevel();
   return 1;
 }
@@ -1111,7 +1102,6 @@ WORD ProcessLevel(void)  /* Sets up internal arrays according to level */
   UpdateItem(REDGEM);
   UpdateItem(BLUEGEM);
   UpdateItem(GREENGEM);
-  copysidebar=1;
   sfx.crack=0;
   sfx.groan=0;
   sfx.magic=0;
@@ -1338,43 +1328,36 @@ void CheckUnderGuy(void)
       regs[REG_REDGEMS-201]++;
       under[regs[REG_XGUY-201]][regs[REG_YGUY-201]]=FLOOR;
       UpdateItem(REDGEM);
-      copysidebar=1;
       break;
     case GREENGEM:
       regs[REG_GREENGEMS-201]++;
       under[regs[REG_XGUY-201]][regs[REG_YGUY-201]]=FLOOR;
       UpdateItem(GREENGEM);
-      copysidebar=1;
       break;
     case BLUEGEM:
       regs[REG_BLUEGEMS-201]++;
       under[regs[REG_XGUY-201]][regs[REG_YGUY-201]]=FLOOR;
       UpdateItem(BLUEGEM);
-      copysidebar=1;
       break;
     case YELLOWGEM:
       regs[REG_YELLOWGEMS-201]=-1;
       under[regs[REG_XGUY-201]][regs[REG_YGUY-201]]=FLOOR;
       UpdateItem(YELLOWGEM);
-      copysidebar=1;
       break;
     case REDKEY:
       regs[REG_REDKEYS-201]++;
       under[regs[REG_XGUY-201]][regs[REG_YGUY-201]]=FLOOR;
       UpdateItem(REDKEY);
-      copysidebar=1;
       break;
     case GREENKEY:
       regs[REG_GREENKEYS-201]++;
       under[regs[REG_XGUY-201]][regs[REG_YGUY-201]]=FLOOR;
       UpdateItem(GREENKEY);
-      copysidebar=1;
       break;
     case BLUEKEY:
       regs[REG_BLUEKEYS-201]++;
       under[regs[REG_XGUY-201]][regs[REG_YGUY-201]]=FLOOR;
       UpdateItem(BLUEKEY);
-      copysidebar=1;
       break;
   }
   }
@@ -1743,7 +1726,6 @@ void Leaving(WORD dx,WORD dy)
     gamevars.bluegemon=0;
     regs[REG_BLUEGEMS-201]--;
     UpdateItem(BLUEGEM);
-    copysidebar=1;
   }
 }
 
@@ -2271,7 +2253,6 @@ void GameMainLoop(void)
           Gdrall();
           ScreenSwap();
         }
-        if(copysidebar){copysidebar=0;}
         CheckMouse();
         CheckLevelDone();
         while(inkey=='p'){  //Pause
