@@ -993,7 +993,6 @@ void gfxInit(void)
     if(blasteravailable){
       for(x=0;x<=9;x++) sounds[x].samples=0;
       load_Wave("crack.wav",&sounds[0]);
-      //load_Wave("groan.wav",&sounds[1]);
       load_Wave("magic.wav",&sounds[2]);
       load_Wave("plateoff.wav",&sounds[3]);
       load_Wave("plateon.wav",&sounds[4]);

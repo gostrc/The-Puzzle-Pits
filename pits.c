@@ -6,7 +6,7 @@
 #include "gfx.h"
 
 typedef struct {
-  WORD crack,groan,magic,plateoff,plateon,scrape,water,lava,splinter,glass;
+  WORD crack,magic,plateoff,plateon,scrape,water,lava,splinter,glass;
 } SFX;
 
 #define PUSHDELAY 25
@@ -1103,7 +1103,6 @@ WORD ProcessLevel(void)  /* Sets up internal arrays according to level */
   UpdateItem(BLUEGEM);
   UpdateItem(GREENGEM);
   sfx.crack=0;
-  sfx.groan=0;
   sfx.magic=0;
   sfx.plateoff=0;
   sfx.plateon=0;
@@ -1306,7 +1305,6 @@ void Gdrall(void)
   StoneText(216+1,173+6,movestring,strlen(movestring),0);
     /* play sfx */
   if(sfx.crack){ sfx.crack=0; PlaySound(SND_CRACK);}
-  if(sfx.groan){ sfx.groan=0;}
   if(sfx.magic){ sfx.magic=0; PlaySound(SND_MAGIC);}
   if(sfx.plateoff){ sfx.plateoff=0;  PlaySound(SND_PLATEOFF);}
   if(sfx.plateon){  sfx.plateon=0;   PlaySound(SND_PLATEON);}
@@ -1811,14 +1809,8 @@ void MoveGuy(WORD dx,WORD dy)
                         regs[REG_YGUY-201]=yloc;
                       }
                       CheckStuff();
-                    }else{
-                      //sfx.groan=1;
-                      //SFX groan
                     }
                   }
-                }else{
-                  //sfx.groan=1;
-                  //SFX groan
                 }
               }
             }else{

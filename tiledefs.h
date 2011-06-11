@@ -21,7 +21,6 @@ typedef unsigned char far CodePtr;
 #define strcat  _fstrcat
 
 #define SND_CRACK     0
-#define SND_GROAN     1
 #define SND_MAGIC     2
 #define SND_PLATEOFF  3
 #define SND_PLATEON   4
