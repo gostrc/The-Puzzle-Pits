@@ -33,8 +33,6 @@ void Pause(LONG n);
 void LoadScreen(LONG n);
 void FadeIn(void);
 
-void Plot(WORD x,WORD y,BYTE c,char far *vscreen);
-
 void ScreenSwap(void);
 void clearscreen(char far *vscreen);
 void Clear(WORD n);

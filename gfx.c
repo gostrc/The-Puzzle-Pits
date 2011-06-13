@@ -278,22 +278,6 @@ void LittleTile(WORD bmap,WORD x,WORD y,WORD image)
   }
 }
 
-void Plot(WORD x,WORD y,BYTE c,char far *vscreen)
-{
-  asm {
-    push es
-    mov  ax,[y]
-    mov  bx,320
-    mul  bx
-    add  ax,[x]
-    les  di,[vscreen]
-    mov  di,ax
-    mov  al,c
-    stosb
-    pop  es
-  }
-}
-
 void GetLevelName(char *lname,WORD firsttime)
 { /* returns each successive *.pit file in the levels\ directory */
   static struct ffblk myffblk;
