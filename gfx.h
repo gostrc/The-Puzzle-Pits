@@ -33,7 +33,7 @@ void FadeIn(void);
 
 void ScreenSwap(void);
 void clearscreen(char far *vscreen);
-void Clear(WORD n);
+void Clear();
 void LoadShapes(char *filename,WORD pos);
 
 void PlaySound(int n);

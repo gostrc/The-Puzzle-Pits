@@ -77,7 +77,7 @@ main()
   SetPalette(2);
   FadeIn();
   Pause(120);
-  Clear(LOGIC);
+  Clear();
   FadeIn();
 
   do{
@@ -163,26 +163,26 @@ main()
           IncrementLevel();
         }
         if(gamevars.level[0]!=0){
-          Clear(LOGIC);
+          Clear();
           FadeIn();
           SetPalette(1);
           GameMainLoop();
-          Clear(LOGIC);
+          Clear();
           FadeIn();
         }
         break;
       case 1:
         strcpy(gamevars.level,firstlvl);
-        Clear(LOGIC);
+        Clear();
         FadeIn();
         SetPalette(1);
         GameMainLoop();
-        Clear(LOGIC);
+        Clear();
         FadeIn();
         break;
     }
   }while(choice!=2);
-  Clear(LOGIC);
+  Clear();
   FadeIn();
   cleanExit(RET_OK);
   return 0;

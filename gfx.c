@@ -826,26 +826,9 @@ void ScreenSwap(void)
   erasemouse(logical);
 }
 
-void clearscreen(char far *vscreen)
+void Clear()
 {
-  asm{
-    push es
-    push di
-    les  di,[vscreen]
-    mov  cx,32000
-    xor  ax,ax
-    rep  movsw
-    pop  di
-    pop  es
-  }
-}
-
-void Clear(WORD n)
-{
-  if(n==LOGIC){
-    //clearscreen(screen);
-    cls(logical);
-  }
+  cls(logical); // clear the screen
 }
 
 void LoadShapes(WORD pos)
