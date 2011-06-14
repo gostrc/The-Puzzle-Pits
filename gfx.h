@@ -32,7 +32,6 @@ void LoadScreen(LONG n);
 void FadeIn(void);
 
 void ScreenSwap(void);
-void clearscreen(char far *vscreen);
 void Clear();
 void LoadShapes(char *filename,WORD pos);
 
