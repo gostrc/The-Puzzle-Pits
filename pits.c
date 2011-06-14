@@ -67,11 +67,8 @@ main()
   WORD choice,menuitem,oldmenuitem,notdone,x;
   FILE *fp;
   char fname[40],password[40];
-  char firstlvl[]={'L'-6,'e'-8,'v'-10,'e'-12,'l'-14,'0'-16,'1'-18,0};
+  char firstlvl[]={'L','e','v','e','l','0','1',0};
 
-  if(firstlvl[0]!='D'){
-    for(x=0;firstlvl[x]!=0;x++) firstlvl[x]+=6+2*x;  /* Decrypt */
-  }
   if(cryptkey[0]!='M'){
     for(x=0;cryptkey[x]!=0;x++) cryptkey[x]+=4*x+4;
   }
