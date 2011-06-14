@@ -71,7 +71,7 @@ main()
 
   gfxInit();
   ChangeMouse(BLANKPOINTER);
-  LoadShapes("gametiles",0);
+  LoadShapes(0);
 
   LoadScreen(0);
   SetPalette(2);
