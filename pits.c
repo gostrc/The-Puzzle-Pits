@@ -69,10 +69,6 @@ main()
   char fname[40],password[40];
   char firstlvl[]={'L','e','v','e','l','0','1',0};
 
-  if(cryptkey[0]!='M'){
-    for(x=0;cryptkey[x]!=0;x++) cryptkey[x]+=4*x+4;
-  }
-
   gfxInit();
   ChangeMouse(BLANKPOINTER);
   LoadShapes("gametiles",0);

@@ -21,7 +21,7 @@ union wordbytes{
   BYTE byte[2];
 };
 
-char cryptkey[]={'M'-4,'i'-8,'n'-12,'d'-16,'y'-20,0};
+char cryptkey[]={'M','i','n','d','y',0};
 
 void cleanExit(WORD retval);
 
