@@ -5,7 +5,6 @@
 
 #define MAXSHAPE 300
 #define LOGIC 0
-#define PHYSIC 1
 
 void Txt(WORD x,WORD y,CHAR *str,WORD len);
 WORD TxtLength(CHAR *str,WORD len);
@@ -16,7 +15,7 @@ void Blit24(WORD bmap,WORD x,WORD y,WORD image);
 void BlitMask24(WORD bmap,WORD x,WORD y,WORD image);
 void Blit(WORD bmap,WORD x,WORD y,WORD image);
 void BlitMask(WORD bmap,WORD x,WORD y,WORD image);
-void LittleTile(WORD bmap,WORD x,WORD y,WORD image);
+void LittleTile(WORD x,WORD y,WORD image);
 
 void GetLevelName(char *lname,WORD firsttime);
 ULONG Timer(void);

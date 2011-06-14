@@ -251,13 +251,9 @@ void BlitMask(WORD bmap,WORD x,WORD y,WORD image)
   }
 }
 
-void LittleTile(WORD bmap,WORD x,WORD y,WORD image)
+void LittleTile(WORD x,WORD y,WORD image)
 {
-  if(bmap==LOGIC){  
-    littleblitmask(x<<3,y<<3,shapes[image],logical);
-  }else{
-    littleblitmask(x<<3,y<<3,shapes[image],physical);
-  }
+  littleblitmask(x<<3,y<<3,shapes[image],physical);
 }
 
 void GetLevelName(char *lname,WORD firsttime)

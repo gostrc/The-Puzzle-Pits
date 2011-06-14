@@ -1142,11 +1142,11 @@ void MagicEye(void)
     x=i%22;
     if(y>0){
       tile=under[x][y];
-      if(tile) LittleTile(PHYSIC,x+2,y-1,tile);
-      tile=over[x][y];     if(tile) LittleTile(PHYSIC,x+2,y-1,tile+3);
-      tile=over[x+1][y];   if(tile) LittleTile(PHYSIC,x+2,y-1,tile+2);
-      tile=over[x][y+1];   if(tile) LittleTile(PHYSIC,x+2,y-1,tile+1);
-      tile=over[x+1][y+1]; if(tile) LittleTile(PHYSIC,x+2,y-1,tile);
+      if(tile) LittleTile(x+2,y-1,tile);
+      tile=over[x][y];     if(tile) LittleTile(x+2,y-1,tile+3);
+      tile=over[x+1][y];   if(tile) LittleTile(x+2,y-1,tile+2);
+      tile=over[x][y+1];   if(tile) LittleTile(x+2,y-1,tile+1);
+      tile=over[x+1][y+1]; if(tile) LittleTile(x+2,y-1,tile);
     }
     i+=59;
     if(i>=484) i-=484;
@@ -1154,10 +1154,10 @@ void MagicEye(void)
   if(gamevars.greengemon==7){
     x=regs[REG_XGUY-201]+1;
     y=regs[REG_YGUY-201]-2;
-    LittleTile(PHYSIC,x,y,guyframe);
-    LittleTile(PHYSIC,x+1,y,guyframe+1);
-    LittleTile(PHYSIC,x,y+1,guyframe+2);
-    LittleTile(PHYSIC,x+1,y+1,guyframe+3);
+    LittleTile(x,y,guyframe);
+    LittleTile(x+1,y,guyframe+1);
+    LittleTile(x,y+1,guyframe+2);
+    LittleTile(x+1,y+1,guyframe+3);
   }
   if(gamevars.greengemon<7){
     over[regs[REG_XGUY-201]][regs[REG_YGUY-201]]=underguy;
