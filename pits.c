@@ -1227,7 +1227,7 @@ void Gdrall(void)
               }
               break;
         }
-        Blit24(LOGIC,x,y,tile);
+        Blit24(x,y,tile);
         tile=over[xd][yd];
         if(tile) BlitMask24(LOGIC,x,y,tile+3);
         tile=over[xd+1][yd];
@@ -1250,7 +1250,7 @@ void Gdrall(void)
             break;
         }
       }else{
-        Blit24(LOGIC,x,y,EMPTYSPACE);
+        Blit24(x,y,EMPTYSPACE);
       }
       xd++;
       frame+=1;
