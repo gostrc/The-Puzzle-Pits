@@ -866,13 +866,11 @@ void Clear(WORD n)
   }
 }
 
-void LoadShapes(char *filename,WORD pos)
+void LoadShapes(WORD pos)
 {
   UWORD width,height,i;
   unsigned char far *datpos;
   FILE *fp;
-
-  filename[0]=0;
 
   fp=ReadFile("tiles1.dat");
   ReadMem(fp,shapedata1,FileSize(fp));
