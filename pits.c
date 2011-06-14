@@ -95,7 +95,7 @@ main()
     choice=-1;
     notdone=1;
     while(notdone){
-      Blit(LOGIC,128,148,TITLETEXTBG);
+      Blit(128,148,TITLETEXTBG);
       ShadowText(141,148,"Enter Level Password",20,menuitem==0?16:1);
       ShadowText(141,156,"Start New Game",14,menuitem==1?16:1);
       ShadowText(141,164,"Quit",4,menuitem==2?16:1);
@@ -128,7 +128,7 @@ main()
         x=0;
         inkey=0xff;
         do{
-          Blit(LOGIC,128,148,TITLETEXTBG);
+          Blit(128,148,TITLETEXTBG);
           ShadowText(141,148,"Enter Level Password",20,16);
           ShadowText(141,164,password,x,1);
           ShadowText(141+TxtLength(password,x),164,"_",1,16);
@@ -886,8 +886,8 @@ void  DrawItemBox(WORD x,WORD y,WORD image,WORD quantity,WORD fnkey)
     Boxf(x-6,y,32,36,5);
   }else{
     Boxf(x,y+27,26,10,5);  //Clear old text
-    Blit(LOGIC,x-6,y+1,fnkey);
-    BlitMask(LOGIC,x+1,y+1,image);
+    Blit(x-6,y+1,fnkey);
+    BlitMask(x+1,y+1,image);
     Frame(x,y,26,26,3,6);
     if(quantity!=-1){
       sprintf(quanstring,"%d",quantity);
@@ -1229,13 +1229,13 @@ void Gdrall(void)
         }
         Blit24(x,y,tile);
         tile=over[xd][yd];
-        if(tile) BlitMask24(LOGIC,x,y,tile+3);
+        if(tile) BlitMask24(x,y,tile+3);
         tile=over[xd+1][yd];
-        if(tile) BlitMask24(LOGIC,x,y,tile+2);
+        if(tile) BlitMask24(x,y,tile+2);
         tile=over[xd][yd+1];
-        if(tile) BlitMask24(LOGIC,x,y,tile+1);
+        if(tile) BlitMask24(x,y,tile+1);
         tile=over[xd+1][yd+1];
-        if(tile) BlitMask24(LOGIC,x,y,tile);
+        if(tile) BlitMask24(x,y,tile);
         switch(under[xd][yd]){
           case LAVADEBRIS2:
             if(frame==1) under[xd][yd]=LAVA; break;
@@ -1261,31 +1261,31 @@ void Gdrall(void)
   }
   if(gamevars.pushing && !magic){
     switch(regs[REG_FACING-201]){
-      case EAST:  BlitMask24(LOGIC,4,2,guyframe+1);
-                  BlitMask24(LOGIC,4,3,guyframe+3);
+      case EAST:  BlitMask24(4,2,guyframe+1);
+                  BlitMask24(4,3,guyframe+3);
                   xd=regs[REG_XGUY-201];
                   yd=regs[REG_YGUY-201];
                   tile=over[xd][yd+1];
-                  if(tile) BlitMask24(LOGIC,4,3,tile+1);
+                  if(tile) BlitMask24(4,3,tile+1);
                   tile=over[xd+1][yd+1];
-                  if(tile) BlitMask24(LOGIC,4,3,tile);
+                  if(tile) BlitMask24(4,3,tile);
                   break;
-      case SOUTH: BlitMask24(LOGIC,3,3,guyframe+2);
-                  BlitMask24(LOGIC,4,3,guyframe+3);
+      case SOUTH: BlitMask24(3,3,guyframe+2);
+                  BlitMask24(4,3,guyframe+3);
                   xd=regs[REG_XGUY-201];
                   yd=regs[REG_YGUY-201];
                   tile=over[xd+1][yd];
-                  if(tile) BlitMask24(LOGIC,4,3,tile+2);
+                  if(tile) BlitMask24(4,3,tile+2);
                   tile=over[xd+1][yd+1];
-                  if(tile) BlitMask24(LOGIC,4,3,tile);
+                  if(tile) BlitMask24(4,3,tile);
                   break;
     }
   }
   if(gamevars.greengemon==7){
-    BlitMask24(LOGIC,3,2,guyframe);
-    BlitMask24(LOGIC,4,2,guyframe+1);
-    BlitMask24(LOGIC,3,3,guyframe+2);
-    BlitMask24(LOGIC,4,3,guyframe+3);
+    BlitMask24(3,2,guyframe);
+    BlitMask24(4,2,guyframe+1);
+    BlitMask24(3,3,guyframe+2);
+    BlitMask24(4,3,guyframe+3);
   }
   lastdrew=Timer();
   if(gamevars.greengemon<7){
@@ -2110,18 +2110,18 @@ void CheckGuy(void)
         }
         if((mx>=223 && mx<223+26 && my>=13 && my<13+26 && letgo1)||inkey==137){  //yield
           if(inkey==137) inkey=0xff;
-          BlitMask(LOGIC,224,14,YIELDPRESSED);
+          BlitMask(224,14,YIELDPRESSED);
           ScreenSwap();
-          BlitMask(LOGIC,224,14,YIELD);
+          BlitMask(224,14,YIELD);
           inkey='r';
           levelnotdone=0;
           letgo1=0;
         }
         if((mx>=287 && mx<287+26 && my>=13 && my<13+26 && letgo1)||inkey==138){  //stop
           if(inkey==138) inkey=0xff;
-          BlitMask(LOGIC,288,14,STOPPRESSED);
+          BlitMask(288,14,STOPPRESSED);
           ScreenSwap();
-          BlitMask(LOGIC,288,14,STOP);
+          BlitMask(288,14,STOP);
           levelnotdone=0;
           levelrepeat=0;
           letgo1=0;

@@ -220,31 +220,19 @@ void Blit24(WORD x,WORD y,WORD image)
   blit(x*24,y*24,shapes[image],logical);
 }
 
-void BlitMask24(WORD bmap,WORD x,WORD y,WORD image)
+void BlitMask24(WORD x,WORD y,WORD image)
 {
-  if(bmap==LOGIC){
-    blitmask(x*24,y*24,shapes[image],logical);
-  }else{
-    blitmask(x*24,y*24,shapes[image],physical);
-  }
+  blitmask(x*24,y*24,shapes[image],logical);
 }
 
-void Blit(WORD bmap,WORD x,WORD y,WORD image)
+void Blit(WORD x,WORD y,WORD image)
 {
-  if(bmap==LOGIC){
-    blit(x,y,shapes[image],logical);
-  }else{
-    blit(x,y,shapes[image],physical);
-  }
+  blit(x,y,shapes[image],logical);
 }
 
-void BlitMask(WORD bmap,WORD x,WORD y,WORD image)
+void BlitMask(WORD x,WORD y,WORD image)
 {
-  if(bmap==LOGIC){
-    blitmask(x,y,shapes[image],logical);
-  }else{
-    blitmask(x,y,shapes[image],physical);
-  }
+  blitmask(x,y,shapes[image],logical);
 }
 
 void LittleTile(WORD x,WORD y,WORD image)

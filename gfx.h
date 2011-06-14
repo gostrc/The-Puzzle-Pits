@@ -4,7 +4,6 @@
 
 
 #define MAXSHAPE 300
-#define LOGIC 0
 
 void Txt(WORD x,WORD y,CHAR *str,WORD len);
 WORD TxtLength(CHAR *str,WORD len);
@@ -12,9 +11,9 @@ void SetPalette(WORD n);
 void SetColor(WORD n);
 
 void Blit24(WORD x,WORD y,WORD image);
-void BlitMask24(WORD bmap,WORD x,WORD y,WORD image);
-void Blit(WORD bmap,WORD x,WORD y,WORD image);
-void BlitMask(WORD bmap,WORD x,WORD y,WORD image);
+void BlitMask24(WORD x,WORD y,WORD image);
+void Blit(WORD x,WORD y,WORD image);
+void BlitMask(WORD x,WORD y,WORD image);
 void LittleTile(WORD x,WORD y,WORD image);
 
 void GetLevelName(char *lname,WORD firsttime);
