@@ -12,8 +12,6 @@ WORD TxtLength(CHAR *str,WORD len);
 void SetPalette(WORD n);
 void SetColor(WORD n);
 
-void Blit16(WORD bmap,WORD x,WORD y,WORD image);
-void BlitMask16(WORD bmap,WORD x,WORD y,WORD image);
 void Blit24(WORD bmap,WORD x,WORD y,WORD image);
 void BlitMask24(WORD bmap,WORD x,WORD y,WORD image);
 void Blit(WORD bmap,WORD x,WORD y,WORD image);

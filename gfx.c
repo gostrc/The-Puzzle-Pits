@@ -215,24 +215,6 @@ bmyloop:
   if(height>0) goto bmyloop;
 }
 
-void Blit16(WORD bmap,WORD x,WORD y,WORD image)
-{
-  if(bmap==LOGIC){
-    blit(x<<4,y<<4,shapes[image],logical);
-  }else{
-    blit(x<<4,y<<4,shapes[image],physical);
-  }
-}
-
-void BlitMask16(WORD bmap,WORD x,WORD y,WORD image)
-{
-  if(bmap==LOGIC){
-    blitmask(x<<4,y<<4,shapes[image],logical);
-  }else{
-    blitmask(x<<4,y<<4,shapes[image],physical);
-  }
-}
-
 void Blit24(WORD bmap,WORD x,WORD y,WORD image)
 {
   if(bmap==LOGIC){
