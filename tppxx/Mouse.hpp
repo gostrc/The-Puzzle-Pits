@@ -18,6 +18,7 @@ public:
 		BLANKPOINTER
 	};
 
+	void SetPosition(int newX, int newY);
 	void SetX(int newX);
 	void SetY(int newY);
 
@@ -35,6 +36,8 @@ private:
 	bool draw; // if we should draw the pointer
 
 	int x, y;
+
+	int numPointers;
 
 	virtual void Render(sf::RenderTarget& target, sf::Renderer& /*renderer*/) const;
 };

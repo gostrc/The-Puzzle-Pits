@@ -1,11 +1,28 @@
 #include "Mouse.hpp"
 
+void Mouse::SetPosition(int newX, int newY) {
+	x = newX;
+	y = newY;
+
+	for(int i = 0; i < numPointers; i++) {
+		pointers[i].SetPosition((float)x, (float)y);
+	}
+}
+
 void Mouse::SetX(int newX) {
 	x = newX;
+
+	for(int i = 0; i < numPointers; i++) {
+		pointers[i].SetX((float)x);
+	}
 }
 
 void Mouse::SetY(int newY) {
 	y = newY;
+
+	for(int i = 0; i < numPointers; i++) {
+		pointers[i].SetY((float)y);
+	}
 }
 
 void Mouse::EnableDraw(bool value) {
@@ -17,7 +34,7 @@ void Mouse::ChangeMouse(POINTER ptr) {
 }
 
 Mouse::Mouse(vector<sf::Image>& images) {
-	const int numPointers = 9;
+	numPointers = 9;
 
 	// set the default mouse pointer
 	curPtr = STDPOINTER;
