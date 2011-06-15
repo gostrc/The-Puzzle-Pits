@@ -1,6 +1,8 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
+#include "Mouse.hpp"
+
 int main() {
 	sf::RenderWindow window(sf::VideoMode(320, 200), "tppxx");
 	while(window.IsOpened()) {
