@@ -1,4 +1,4 @@
-// g++ dat2png.cpp -lboost_filesystem -lX11
+// g++ dat2png.cpp -lboost_filesystem -lX11 -Wall -pedantic
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -59,7 +59,7 @@ void convert_screen(const char *inputfilename, const char *outputfilename, int p
 
     unsigned char *pal;
     if(palette==1) pal = pal1;
-    else if(palette=2) pal = pal2;
+    else if(palette==2) pal = pal2;
     else pal = pal3;
 
     char *data = new char[filesize];
@@ -93,7 +93,7 @@ void convert_tiles(const char *inputfilename, int palette) {
 
     unsigned char *pal;
     if(palette==1) pal = pal1;
-    else if(palette=2) pal = pal2;
+    else if(palette==2) pal = pal2;
     else pal = pal3;
 
     char *data = new char[filesize];
