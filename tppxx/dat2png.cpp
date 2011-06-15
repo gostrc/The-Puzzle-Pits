@@ -140,6 +140,7 @@ int main() {
     //convert_tiles("tiles1.dat", 1);
     //convert_tiles("tiles2.dat", 1);
     //convert_tiles("tiles3.dat", 1);
-    convert_tiles("tiles.dat", 1);
+    //convert_tiles("tiles.dat", 1);
+    convert_tiles("plasma1.fnt", 1);
     return 0;
 }
