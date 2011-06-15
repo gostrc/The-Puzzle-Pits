@@ -950,13 +950,9 @@ WORD GameLoadLevel(void)
 {
   FILE *fp;
   char fname[40]=LEVELPATH;
-  /* file.c:  char cryptkey[]={'M'-4,'i'-8,'n'-12,'d'-16,'y'-20,0}; */
-  static char key[]={'A'-5,'m'-10,'a'-15,'n'-20,'d'-25,'a'-30,0};
+  static char key[]={'A','m','a','n','d','a',0};
   WORD numpitcode,magic,i,keypos;
 
-  if(key[0]!='A'){
-    for(i=0;key[i]!=0;i++) key[i]+=(i+1)*5;
-  }
   strcat(fname,gamevars.level);
   strcat(fname,".pit");
   if(!Exists(fname)) return 0;
