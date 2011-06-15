@@ -1,9 +1,10 @@
 // g++ dat2png.cpp -lboost_filesystem -lX11
 #include <iostream>
 #include <fstream>
+#include <sstream>
+#include <iomanip>
 #include <string>
 #include <boost/filesystem.hpp>
-#include <boost/lexical_cast.hpp>
 #include <CImg.h>
 using namespace std;
 using namespace cimg_library;
@@ -121,7 +122,11 @@ void convert_tiles(const char *inputfilename, int palette) {
                 //cout << "x" << i << " y" << j << endl;
             }
         }
-        image.save_png((boost::lexical_cast<string>(pic) + ".png").c_str());
+
+        ostringstream strnum;
+        strnum << setw(3) << setfill('0') << pic; // pad to 3 nums
+
+        image.save_png((strnum.str() + ".png").c_str());
         pic++;
         counter += width*height;
     }
@@ -134,6 +139,7 @@ int main() {
     //convert_screen("title.dat", "title.png", 3);
     //convert_tiles("tiles1.dat", 1);
     //convert_tiles("tiles2.dat", 1);
-    convert_tiles("tiles3.dat", 1);
+    //convert_tiles("tiles3.dat", 1);
+    convert_tiles("tiles.dat", 1);
     return 0;
 }
