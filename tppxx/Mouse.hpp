@@ -1,3 +1,6 @@
+#ifndef _MOUSE_HPP_
+#define _MOUSE_HPP_
+
 #include <SFML/Graphics.hpp>
 
 #include <vector>
@@ -41,3 +44,5 @@ private:
 
 	virtual void Render(sf::RenderTarget& target, sf::Renderer& /*renderer*/) const;
 };
+
+#endif
