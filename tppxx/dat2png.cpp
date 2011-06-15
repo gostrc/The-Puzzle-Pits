@@ -1,4 +1,5 @@
 // g++ dat2png.cpp -lboost_filesystem -lX11 -Wall -pedantic
+// converts the dat and fnt files that came with game to a modern format (png)
 #include <iostream>
 #include <fstream>
 #include <sstream>
