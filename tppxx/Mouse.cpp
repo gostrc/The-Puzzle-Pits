@@ -52,8 +52,8 @@ Mouse::Mouse() {
 		}
 		tileImages.push_back(img);
 
-		SpritePtr spr(new sf::Sprite);
-		spr->SetImage(*tileImages[i]);
+		SpritePtr spr(new sf::Sprite(*tileImages[i]));
+		//spr->SetImage(*tileImages[i]);
 		tileSprites.push_back(spr);
 	}
 
@@ -70,6 +70,6 @@ Mouse::Mouse() {
 
 void Mouse::Render(sf::RenderTarget& target, sf::Renderer& /*renderer*/) const {
 	if(draw) {
-		target.Draw(*tileSprites[curPtr]);
+		target.Draw(*(tileSprites[curPtr]));
 	}
 }
