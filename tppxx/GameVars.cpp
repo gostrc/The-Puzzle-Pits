@@ -14,8 +14,8 @@ GameVars::GameVars() : mouse(new Mouse) {
 		}
 		tileImages.push_back(img);
 
-		SpritePtr spr(new sf::Sprite);
-		spr->SetImage(*tileImages[i]);
+		SpritePtr spr(new sf::Sprite(*tileImages[i]));
+		//spr->SetImage(*tileImages[i]);
 		tileSprites.push_back(spr);
 	}
 }

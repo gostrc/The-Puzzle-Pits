@@ -12,8 +12,10 @@ GameVars gamevars;
 int main() {
 	sf::RenderWindow window(sf::VideoMode(320, 200), "tppxx");
 	window.ShowMouseCursor(false);
+	window.SetFramerateLimit(60);
 
 	gamevars.mouse->EnableDraw(true);
+	gamevars.mouse->ChangeMouse(CROSSHAIRS);
 
 	while(window.IsOpened()) {
 		// process events
@@ -26,6 +28,19 @@ int main() {
 			} else if(event.Type == sf::Event::MouseMoved) {
 				// update the mouse position
 				gamevars.mouse->SetPosition(event.MouseMove.X, event.MouseMove.Y);
+			} else if(event.Type == sf::Event::KeyPressed) {
+				if(event.Key.Code == sf::Key::Left) {
+					cout << "left button pressed" << endl;
+				}
+				if(event.Key.Code == sf::Key::Right) {
+					cout << "right button pressed" << endl;
+				}
+				if(event.Key.Code == sf::Key::Up) {
+					cout << "up button pressed" << endl;
+				}
+				if(event.Key.Code == sf::Key::Down) {
+					cout << "down button pressed" << endl;
+				}
 			}
 		}
 
