@@ -7,7 +7,6 @@
 GameVars::GameVars() : mouse(new Mouse) {
 	std::string path("../data/images/tiles/");
 
-	// 275 tiles
 	for(int i = 0; i < NUMTILES; i++) {
 		ImagePtr img(new sf::Image);
 		if(!img->LoadFromFile(path + PadItoA(3, i) + ".png")) {
