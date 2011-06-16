@@ -1,7 +1,9 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
-#include "Mouse.hpp"
+#include "GameVars.hpp"
+
+GameVars gamevars;
 
 int main() {
 	sf::RenderWindow window(sf::VideoMode(320, 200), "tppxx");
@@ -17,6 +19,8 @@ int main() {
 
 		// clear screen
 		window.Clear();
+
+		window.Draw(*(gamevars.mouse));
 
 		// update window
 		window.Display();
