@@ -41,8 +41,6 @@ Mouse::Mouse(std::vector<sf::Image>& images) {
 
 	// allocate only as much as we need, 9 pointers total
 	pointers.resize(numPointers);
-	offsetX.resize(numPointers);
-	offsetY.resize(numPointers);
 
 	draw = false;
 

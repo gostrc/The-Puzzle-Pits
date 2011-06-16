@@ -33,7 +33,6 @@ private:
 	POINTER curPtr;
 
 	std::vector<sf::Sprite> pointers;
-	std::vector<int> offsetX, offsetY;
 
 	bool draw; // if we should draw the pointer
 
