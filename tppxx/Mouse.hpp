@@ -4,7 +4,6 @@
 #include <SFML/Graphics.hpp>
 
 #include <vector>
-using std::vector;
 
 class Mouse : public sf::Sprite
 {
@@ -29,12 +28,12 @@ public:
 
 	void ChangeMouse(POINTER ptr);
 
-	Mouse(vector<sf::Image>& images);
+	Mouse(std::vector<sf::Image>& images);
 private:
 	POINTER curPtr;
 
-	vector<sf::Sprite> pointers;
-	vector<int> offsetX, offsetY;
+	std::vector<sf::Sprite> pointers;
+	std::vector<int> offsetX, offsetY;
 
 	bool draw; // if we should draw the pointer
 

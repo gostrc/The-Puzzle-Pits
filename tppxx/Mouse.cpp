@@ -33,7 +33,7 @@ void Mouse::ChangeMouse(POINTER ptr) {
 	curPtr = ptr;
 }
 
-Mouse::Mouse(vector<sf::Image>& images) {
+Mouse::Mouse(std::vector<sf::Image>& images) {
 	numPointers = 9;
 
 	// set the default mouse pointer
