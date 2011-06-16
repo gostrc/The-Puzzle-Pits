@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "GameVars.hpp"
+#include "common.hpp"
 
 GameVars gamevars;
 
@@ -20,7 +21,7 @@ int main() {
 		// clear screen
 		window.Clear();
 
-		window.Draw(*(gamevars.mouse));
+		window.Draw(*gamevars.mouse);
 
 		// update window
 		window.Display();

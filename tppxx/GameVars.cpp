@@ -1,29 +1,22 @@
 #include <string>
-#include <sstream>
-#include <iomanip>
 
 #include "GameVars.hpp"
 
-// returns a padded string representation of a number
-static std::string PadItoA(int numPad, int number) {
-	std::ostringstream strnum;
-	strnum << std::setw(numPad) << std::setfill('0') << number;
-	return strnum.str();
-}
+#include "common.hpp"
 
-GameVars::GameVars() {
+GameVars::GameVars() : mouse(new Mouse) {
 	std::string path("../data/images/tiles/");
 
-	// 285 tiles
-	tileImages.resize(285);
-	tileSprites.resize(285);
-
-	for(int i = 0; i < 285; i++) {
-		if(!tileImages[i].LoadFromFile(path + PadItoA(3, i) + ".png")) {
+	// 275 tiles
+	for(int i = 0; i < NUMTILES; i++) {
+		ImagePtr img(new sf::Image);
+		if(!img->LoadFromFile(path + PadItoA(3, i) + ".png")) {
 			exit(EXIT_FAILURE);
 		}
-		tileSprites[i].SetImage(tileImages[i]);
-	}
+		tileImages.push_back(img);
 
-	mouse = new Mouse(tileImages);
+		SpritePtr spr(new sf::Sprite);
+		spr->SetImage(*tileImages[i]);
+		tileSprites.push_back(spr);
+	}
 }

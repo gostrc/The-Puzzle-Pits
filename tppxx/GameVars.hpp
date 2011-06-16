@@ -1,16 +1,19 @@
+#include <boost/shared_ptr.hpp>
+
 #include <vector>
 
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
+#include "common.hpp"
 #include "Mouse.hpp"
 
 class GameVars {
 public:
 	GameVars();
 
-	Mouse* mouse;
+	MousePtr mouse;
 private:
-	std::vector<sf::Image> tileImages;
-	std::vector<sf::Sprite> tileSprites;
+	std::vector<ImagePtr> tileImages;
+	std::vector<SpritePtr> tileSprites;
 };

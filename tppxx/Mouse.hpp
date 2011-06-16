@@ -5,21 +5,11 @@
 
 #include <vector>
 
-class Mouse : public sf::Sprite
+#include "common.hpp"
+
+class Mouse : public sf::Drawable
 {
 public:
-	enum POINTER{
-		STDPOINTER, 
-		CROSSHAIRS, 
-		BRACKETCROSSHAIRS,
-		UPARROWPTR,
-		RIGHTARROWPTR,
-		DOWNARROWPTR,
-		LEFTARROWPTR,
-		BUSYPOINTER,
-		BLANKPOINTER
-	};
-
 	void SetPosition(int newX, int newY);
 	void SetX(int newX);
 	void SetY(int newY);
@@ -28,11 +18,12 @@ public:
 
 	void ChangeMouse(POINTER ptr);
 
-	Mouse(std::vector<sf::Image>& images);
+	Mouse();
 private:
 	POINTER curPtr;
 
-	std::vector<sf::Sprite> pointers;
+	std::vector<ImagePtr> tileImages;
+	std::vector<SpritePtr> tileSprites;
 
 	bool draw; // if we should draw the pointer
 
