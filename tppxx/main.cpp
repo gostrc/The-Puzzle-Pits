@@ -8,6 +8,7 @@ GameVars gamevars;
 
 int main() {
 	sf::RenderWindow window(sf::VideoMode(320, 200), "tppxx");
+	gamevars.mouse->EnableDraw(true);
 	while(window.IsOpened()) {
 		// process events
 		sf::Event event;
