@@ -1,5 +1,3 @@
-#include <boost/shared_ptr.hpp>
-
 #include <vector>
 
 #include <SFML/Audio.hpp>
