@@ -10,17 +10,17 @@ class GameVars {
 public:
 	GameVars();
 
-	MousePtr mouse;
+	std::shared_ptr<Mouse> mouse;
 
 	void PlaySound(int soundNum);
 
-	SpritePtr logoSprite, titleSprite;
+	std::shared_ptr<sf::Sprite> logoSprite, titleSprite;
 private:
-	std::vector<ImagePtr> tileImages;
-	std::vector<SpritePtr> tileSprites;
+	std::vector<std::shared_ptr<sf::Image>> tileImages;
+	std::vector<std::shared_ptr<sf::Sprite>> tileSprites;
 
-	std::vector<SoundBufferPtr> SoundBuffers;
-	std::vector<SoundPtr> Sounds;
+	std::vector<std::shared_ptr<sf::SoundBuffer>> SoundBuffers;
+	std::vector<std::shared_ptr<sf::Sound>> Sounds;
 
-	ImagePtr logoImage, titleImage;
+	std::shared_ptr<sf::Image> logoImage, titleImage;
 };

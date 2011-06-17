@@ -34,15 +34,6 @@ const int NUMSOUNDS = 9;
 
 const int NUMTILES = 276;
 
-class Mouse;
-typedef std::shared_ptr<Mouse> MousePtr;
-
-typedef std::shared_ptr<sf::Image> ImagePtr;
-typedef std::shared_ptr<sf::Sprite> SpritePtr;
-
-typedef std::shared_ptr<sf::SoundBuffer> SoundBufferPtr;
-typedef std::shared_ptr<sf::Sound> SoundPtr;
-
 // returns a padded string representation of a number
 std::string PadItoA(int numPad, int number);
 

@@ -22,8 +22,8 @@ public:
 private:
 	POINTER curPtr;
 
-	std::vector<ImagePtr> tileImages;
-	std::vector<SpritePtr> tileSprites;
+	std::vector<std::shared_ptr<sf::Image>> tileImages;
+	std::vector<std::shared_ptr<sf::Sprite>> tileSprites;
 
 	bool draw; // if we should draw the pointer
 

@@ -46,13 +46,13 @@ Mouse::Mouse() {
 	x = y = 0;
 
 	for(int i = 0; i < NUMPOINTERS; i++) {
-		ImagePtr img(new sf::Image);
+		std::shared_ptr<sf::Image> img(new sf::Image);
 		if(!img->LoadFromFile(path + PadItoA(1, i) + ".png")) {
 			exit(EXIT_FAILURE);
 		}
 		tileImages.push_back(img);
 
-		SpritePtr spr(new sf::Sprite(*tileImages[i]));
+		std::shared_ptr<sf::Sprite> spr(new sf::Sprite(*tileImages[i]));
 		//spr->SetImage(*tileImages[i]);
 		tileSprites.push_back(spr);
 	}
