@@ -92,7 +92,6 @@ extern struct PitCode pitcodedef[MAXPITCODE];
 extern UWORD totalcode;
 
 extern struct GameVars gamevars;
-extern WORD  editxc, edityc;
 extern WORD  under[23][23],over[23][23],pitcode[23][23];
 extern WORD  curpointer;
 extern WORD  tilemenu[10];
