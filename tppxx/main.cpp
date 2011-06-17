@@ -31,15 +31,19 @@ int main() {
 			} else if(event.Type == sf::Event::KeyPressed) {
 				if(event.Key.Code == sf::Key::Left) {
 					cout << "left button pressed" << endl;
+					gamevars.PlaySound(SND_MAGIC);
 				}
 				if(event.Key.Code == sf::Key::Right) {
 					cout << "right button pressed" << endl;
+					gamevars.PlaySound(SND_CRACK);
 				}
 				if(event.Key.Code == sf::Key::Up) {
 					cout << "up button pressed" << endl;
+					gamevars.PlaySound(SND_WATER);
 				}
 				if(event.Key.Code == sf::Key::Down) {
 					cout << "down button pressed" << endl;
+					gamevars.PlaySound(SND_LAVA);
 				}
 			}
 		}
