@@ -15,10 +15,14 @@ public:
 	MousePtr mouse;
 
 	void PlaySound(int soundNum);
+
+	SpritePtr logoSprite, titleSprite;
 private:
 	std::vector<ImagePtr> tileImages;
 	std::vector<SpritePtr> tileSprites;
 
 	std::vector<SoundBufferPtr> SoundBuffers;
 	std::vector<SoundPtr> Sounds;
+
+	ImagePtr logoImage, titleImage;
 };

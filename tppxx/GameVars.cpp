@@ -10,6 +10,7 @@ static std::string soundFilenames[] = { "crack", "magic", "plateoff", "plateon",
 GameVars::GameVars() : mouse(new Mouse) {
 	std::string path("../data/images/tiles/");
 	std::string soundpath("../data/sounds/");
+	std::string logotitlepath("../data/images/");
 
 	for(int i = 0; i < NUMTILES; i++) {
 		ImagePtr img(new sf::Image);
@@ -30,6 +31,15 @@ GameVars::GameVars() : mouse(new Mouse) {
 		SoundPtr sp(new sf::Sound(*sbp));
 		Sounds.push_back(sp);
 	}
+
+	// load title and logo
+	titleImage = ImagePtr(new sf::Image);
+	titleImage->LoadFromFile(logotitlepath + "title.png");
+	titleSprite = SpritePtr(new sf::Sprite(*titleImage));
+
+	logoImage = ImagePtr(new sf::Image);
+	logoImage->LoadFromFile(logotitlepath + "logo.png");
+	logoSprite = SpritePtr(new sf::Sprite(*logoImage));
 }
 
 void GameVars::PlaySound(int soundNum) {

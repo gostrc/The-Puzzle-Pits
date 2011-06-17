@@ -51,6 +51,9 @@ int main() {
 		// clear screen
 		window.Clear();
 
+		window.Draw(*gamevars.logoSprite);
+		window.Draw(*gamevars.titleSprite);
+
 		// draw the mouse pointer
 		window.Draw(*gamevars.mouse);
 
